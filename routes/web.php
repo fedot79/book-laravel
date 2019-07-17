@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
+Route::resource('/','IndexController',[
+                                        'only' =>['index'],
+                                        'names' =>[
+                                            'index'=>'home'
+                                        ]
+                                       ]);
+
+/*Route::get('/', function () {
     return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');*/
