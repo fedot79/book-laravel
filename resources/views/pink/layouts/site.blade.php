@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset(env('THEME')) }}/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset(env('THEME')) }}/slick/slick-theme.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset(env('THEME')) }}/css/style.css">
 
 </head>
 <body>
@@ -54,25 +54,9 @@
             </div>
         </div>
     </div>
-    <div class="hdr-bot">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 hdr-menu">
-                    <nav class="d-flex justify-content-between" >
-                        <li class="d-inline"><a href="">Computers</a></li>
-                        <li class="d-inline"><a href="">Cooking</a></li>
-                        <li class="d-inline"><a href="">Education</a></li>
-                        <li class="d-inline"><a href="">Fiction</a></li>
-                        <li class="d-inline"><a href="">Health</a></li>
-                        <li class="d-inline"><a href="">Mathematics</a></li>
-                        <li class="d-inline"><a href="">Medical</a></li>
-                        <li class="d-inline"><a href="">Reference</a></li>
-                        <li class="d-inline"><a href="">Science</a></li>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Header Menu Start-->
+        @yield('menu');
+    <!-- Header Menu End-->
 </header>
 <main>
     <div class="container">
@@ -741,8 +725,8 @@
     </div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="slick/slick.min.js"></script>
-<script src="js/main.js"></script>
+<script src="{{ asset(env('THEME')) }}/slick/slick.min.js"></script>
+<script src="{{ asset(env('THEME')) }}/js/main.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>

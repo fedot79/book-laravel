@@ -2,6 +2,8 @@
 
 namespace Book\Http\Controllers;
 
+use Book\Categories;
+use Book\Repositories\MenuRepository;
 use Illuminate\Http\Request;
 
 class IndexController extends SiteController
@@ -9,7 +11,7 @@ class IndexController extends SiteController
 
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct(new MenuRepository(new Categories()));
         $this->bar = 'left';
         $this->template = env('THEME').'.index';
     }
