@@ -5,13 +5,18 @@ namespace Book\Http\Controllers;
 use Book\Categories;
 use Book\Repositories\MenuRepository;
 use Illuminate\Http\Request;
+use Book\Repositories\SliderRepository;
+use Book\Repositories\BooksRepository;
+use Illuminate\Support\Facades\Config;
 
 class IndexController extends SiteController
 {
 
-    public function __construct()
+    public function __construct(SliderRepository $s_rep,BooksRepository $b_rep)
     {
         parent::__construct(new MenuRepository(new Categories()));
+        $this->s_rep = $s_rep;
+        $this->b_rep = $b_rep;
         $this->bar = 'left';
         $this->template = env('THEME').'.index';
     }
@@ -22,8 +27,28 @@ class IndexController extends SiteController
      */
     public function index()
     {
+        $books = $this->getBooks();
+       $content = view(env('THEME').'.content')->with('books',$books)->render();
+       $this->vars = array_add($this->vars,'content',$content);
 
+        $sliderItems = $this->getSliders();
+
+        $sliders = view(env('THEME').'.slider')->with('sliders',$sliderItems)->render();
+        $this->vars = array_add($this->vars,'sliders',$sliders);
         return $this->renderOutput();
+    }
+
+    protected function getBooks(){
+        $books = $this->b_rep->get('*',Config::get('settings.home_port_count'));
+
+        return $books;
+
+    }
+
+    public function getSliders(){
+        $sliders = $this->s_rep->get();
+
+        return $sliders;
     }
 
     /**

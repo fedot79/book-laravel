@@ -4,6 +4,7 @@ namespace Book\Http\Controllers;
 
 use Book\Repositories\MenuRepository;
 use Illuminate\Http\Request;
+use Lavary\Menu\Menu;
 
 
 
@@ -39,7 +40,7 @@ class SiteController extends Controller
 
 
 
-        $menu = view(env('THEME').'.menu')->render();
+        $menu = view(env('THEME').'.menu')->with('categories',$categories)->render();
         $this->vars = array_add($this->vars,'menu',$menu);
 
 
@@ -47,7 +48,22 @@ class SiteController extends Controller
     }
     protected function getCategories(){
         $categories = $this->m_rep->get();
-        return $categories;
+
+
+        $tMenu = new Menu();
+        $tMenu->make('TopMenu',function ($t) use ($categories){
+            foreach ($categories as $item){
+
+                if ($item->parent_id > 0){
+                    $t->add($item->name);
+
+                }
+
+            }
+
+        });
+
+        return $tMenu;
     }
 
 }
