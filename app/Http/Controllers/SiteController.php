@@ -43,6 +43,9 @@ class SiteController extends Controller
         $menu = view(env('THEME').'.menu')->with('categories',$categories)->render();
         $this->vars = array_add($this->vars,'menu',$menu);
 
+        $footer = view(env('THEME').'.footer')->render();
+        $this->vars = array_add($this->vars,'footer',$footer);
+
 
         return view($this->template)->with($this->vars);
     }

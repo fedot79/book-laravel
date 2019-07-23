@@ -4,9 +4,7 @@
     {!! $menu !!}
 @endsection
 
-@section('slider')
-    {!! $sliders !!}
-@endsection
+
 
 @section('content')
     {!! $content !!}
@@ -15,5 +13,3 @@
 @section('footer')
     {!! $footer !!}
 @endsection
-
-

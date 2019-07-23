@@ -64,22 +64,13 @@
             <!-- Slider Start-->
             @yield('slider')
             <!-- Slider End-->
-            <div class="col-md-3   text-center deal">
-                <span class="deal-head">Deal of the Month</span>
-                <span class="deal-text">The Human Face of Big Data</span>
-                <img class="deal-book" src="img/deal-book.png" alt="">
-                <img class="deal-postament" src="img/deal-postament.png" alt=""><br>
-                <span class="deal-disc">Save 45% Today</span><br>
-                <span class="deal-price">$27.50</span><br>
-                <button type="button" class="btn btn-success deal-btn">Buy now</button>
 
-            </div>
             <div class="col-md-2 left-menu">
                 <p class="left-menu-cat">Categories</p>
                 <nav >
                     <li id="all" class="act menu-head" >ALL</li>
                     <li class="all-child menu-head fict ">Fiction & Literature</li>
-                    <li class="fict-child"><a class="cat" href="category_page.html">Children</a></li>
+                    <li class="fict-child"><a class="cat" href="#">Children</a></li>
                     <li class="fict-child "><a class="cat"  href="category_page.html">Science Fiction</a></li>
                     <li class="fict-child"><a href="category_page.html">Fantasy</a></li>
                     <li class="fict-child"><a  href="category_page.html">Mystery</a></li>
@@ -130,98 +121,9 @@
         </div>
     </div>
 </main>
-<footer>
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 text-left footer-top-unit">
-                    <p>Biography & True Stories</p>
-                    <nav class="nav flex-column text-left">
-                        <a class="nav-link " href="#!">General</a>
-                        <a class="nav-link" href="#!">Diaries, Letters & Journals</a>
-                        <a class="nav-link" href="#!">Memoirs</a>
-                        <a class="nav-link " href="#!">True Stories</a>
-                        <a class="nav-link" href="#!">Generic Exams</a>
-                        <a class="nav-link" href="#!">GK Titles</a>
-                        <a class="nav-link " href="#!">Medical Entrance</a>
-                        <a class="nav-link" href="#!">Other Entrance Exams</a>
-                        <a class="nav-link" href="#!">PG Entrance Examinations</a>
-                        <a class="nav-link" href="#!">Self-help Titles</a>
-                        <a class="nav-link" href="#!">Sociology</a>
-                    </nav>
-                </div>
-                <div class="col-md-3 footer-top-unit">
-                    <p>Professional & Reference </p>
-                    <nav class="nav flex-column text-left">
-                        <a class="nav-link " href="#!">Academic and Reference</a>
-                        <a class="nav-link" href="#!">Business Trade</a>
-                        <a class="nav-link" href="#!">Engineering and Computer Science</a>
-                        <a class="nav-link " href="#!">Humanities, Social Sciences and Languages</a>
-                        <a class="nav-link" href="#!">Introduction to Computers</a>
-                        <a class="nav-link" href="#!">Science and Maths</a>
-                        <a class="nav-link " href="#!">Trade Business</a>
-                        <a class="nav-link" href="#!">English Language & Literature</a>
-                        <a class="nav-link" href="#!">English Language Teaching</a>
-                        <a class="nav-link" href="#!">Environment Awareness</a>
-                        <a class="nav-link" href="#!">Environment Protection</a>
-                    </nav>
-                </div>
-                <div class="col-md-3 footer-top-unit">
-                    <p>Earth Sciences </p>
-                    <nav class="nav flex-column text-left">
-                        <a class="nav-link " href="#!">Earth Sciences</a>
-                        <a class="nav-link" href="#!">Geography</a>
-                        <a class="nav-link" href="#!">The Environment</a>
-                        <a class="nav-link " href="#!">Regional & Area Planning</a>
-                        <a class="nav-link" href="#!">Fantasy</a>
-                        <a class="nav-link" href="#!">Gay</a>
-                        <a class="nav-link " href="#!">Humorous</a>
-                        <a class="nav-link" href="#!">Interactive</a>
-                        <a class="nav-link" href="#!">Legal</a>
-                        <a class="nav-link" href="#!">Lesbian</a>
-                        <a class="nav-link" href="#!">Men'S Adventure</a>
-                        <a class="nav-link" href="#!">Movie Or Television Tie-In</a>
-                    </nav>
-                </div>
-                <div class="col-md-3 footer-top-unit">
-                    <p>Mathematics</p>
-                    <nav class="nav flex-column text-left">
-                        <a class="nav-link " href="#!">Algebra</a>
-                        <a class="nav-link" href="#!">Differential Equations</a>
-                        <a class="nav-link" href="#!">Discrete Mathematics</a>
-                        <a class="nav-link " href="#!">Fourier Analysis</a>
-                        <a class="nav-link" href="#!">Numerical Analysis</a>
-                        <a class="nav-link" href="#!">Probability</a>
-                        <a class="nav-link " href="#!">Statistical Methods/data Analysis</a>
-                        <a class="nav-link" href="#!">Stochastic And Random Processes</a>
-                        <a class="nav-link" href="#!">Topology</a>
-                        <a class="nav-link" href="#!">Statistics</a>
-                        <a class="nav-link" href="#!">Mathematics</a>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p> We accept all major Credit Card/Debit Card/Internet Banking </p>
-                    <img src="img/mcard.png" alt="">
-                    <img src="img/amexpr.png" alt="">
-                    <img src="img/visa.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center"><p> Conditions of Use Privacy Notice © 2012-2013, Booksonline, Inc</p></div>
-            </div>
-        </div>
-    </div>
-</footer>
+<!-- Footer Start-->
+@yield('footer')
+<!-- Footer End-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="{{ asset(env('THEME')) }}/slick/slick.min.js"></script>
 <script src="{{ asset(env('THEME')) }}/js/main.js"></script>

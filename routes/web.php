@@ -18,6 +18,11 @@ Route::resource('/','IndexController',[
                                         ]
                                        ]);
 
+Route::resource('books','BooksController');
+
+Route::get('books/cat/{cat_id?}',['uses' => 'BooksController@index','as' => 'booksCat']);
+
+
 /*Route::get('/', function () {
     return view('welcome');
 });
