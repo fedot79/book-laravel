@@ -28,6 +28,7 @@ class IndexController extends SiteController
     public function index()
     {
         $books = $this->getBooks();
+        $newBooks = $this->getNew();
        $content = view(env('THEME').'.content')->with('books',$books)->render();
        $this->vars = array_add($this->vars,'content',$content);
 
@@ -36,6 +37,11 @@ class IndexController extends SiteController
         $sliders = view(env('THEME').'.slider')->with('sliders',$sliderItems)->render();
         $this->vars = array_add($this->vars,'sliders',$sliders);
         return $this->renderOutput();
+    }
+
+    protected function getNew(){
+        $newBooks = $this->b_rep->get(['created_at'],Config::get('settings.home_port_count'));
+        return $newBooks;
     }
 
     protected function getBooks(){
